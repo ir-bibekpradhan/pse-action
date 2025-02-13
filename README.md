@@ -67,7 +67,7 @@ Service Container Environments
  
 
 Action Input
- - github-token: Required. Github token
+ - github-token: Required Github token
 
 ## Usage
 To use this action, add the following step to your workflow:

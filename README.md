@@ -60,12 +60,10 @@ PSE scans all outgoing traffic for secrets. These requests can be blocked or can
 ## Input
 Service Container Environments
  - GITHUB_TOKEN: Required. Github token with permission to write checks
- - OPENAI_AUTH_TOKEN: Optional. If provided, call out to OpenAI to summarize activities.
  - POLICY_URL: URL from where to fetch policy
  - POLICY_AUTH_TOKEN: Bearer token used to authenticate with policy provider
  - POLICY_LOG: if set enable policy log
  
-
 Action Input
  - github-token: Required Github token
 
@@ -92,7 +90,6 @@ jobs:
         image: invisirisk/pse
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # should have permissions to write checks
-           OPENAI_AUTH_TOKEN: ${{ secrets.OPENAI_AUTH_TOKEN }} # if set, use OpenAI chat to summarize
            
            POLICY_URL: https://api.github.com/repos/invisirisk/policy/tarball/main #if set the URL to pull policy bundle from
            POLICY_AUTH_TOKEN: ${{ secrets.POLICY_AUTH_TOKEN }} # bearer auth token used when pull down policy
@@ -152,7 +149,7 @@ Policy return should include the following details:
 - details: if result is alert, message associated with the alert
 
 ## Output
-The output is set as checks associated with the build. These checks can be summarized using OpenAI ChatBot.
+The output is set as checks associated with the build.
 
 ## Restrictions
 - Only works with Alpine, Debian, and Ubuntu container builds.

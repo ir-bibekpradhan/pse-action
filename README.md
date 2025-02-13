@@ -54,27 +54,8 @@ Full policy control over what should be admitted to the build system. PSE uses [
 
 The policy control allows for alert or block of traffic.
 
-#### Example block report
-
-> ##### :no_entry_sign: git - pull - github.com/TheTorProject/gettorbrowser
-> ##### OpenAI Summary
-> The activity of trying to pull code from the GitHub repository for gettorbrowser was blocked due to policy. There is no related risk from the build system.
->
-> ##### Details
-> Blocked: Blocked by policy
-
-
 ### Secret Scan
 PSE scans all outgoing traffic for secrets. These requests can be blocked or can raise alert based on configuration.
-
-#### Example Report
-> ##### :warning: web - post - risky.com/
->
-> ##### Details
-> - URL: https://risky.com/post-target
-> - GitHub-App-Token: secret value ghs_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXg,
-> - Download-Type: mime: text/html; charset=utf-8
-> - Download-Checksum: checksum 5dc1213c14995bdf78755c41174b0060
 
 ## Input
 Service Container Environments
@@ -84,7 +65,6 @@ Service Container Environments
  - POLICY_AUTH_TOKEN: Bearer token used to authenticate with policy provider
  - POLICY_LOG: if set enable policy log
  
-
 
 Action Input
  - github-token: Required. Github token
@@ -171,29 +151,8 @@ Policy return should include the following details:
 - result: allow, deny, alert/warn, alert/error, alert/crit
 - details: if result is alert, message associated with the alert
 
-#### Example alert report
-
-> ##### :warning: git - pull - github.com/TheTorProject/gettorbrowser
-> ###### OpenAI Summary
-> The activity involved accessing the Github repository for the Tor Browser and pulling content. The related risk could be the potential for the introduction of malicious code into the build system.
-> ###### Details
-> - Alert: accessing repo github.com/TheTorProject/gettorbrowser with action pull
-> - Download-Type: mime: text/plain; charset=utf-8
-> - Download-Checksum: checksum cddb06e275ca09d516bc759f77ac5efe 
-#### Example block report
-
-> ###### :no_entry_sign: git - pull - github.com/TheTorProject/gettorbrowser
-> ###### OpenAI Summary
-> The activity of trying to pull code from the GitHub repository for gettorbrowser was blocked due to policy. There is no related risk from the build system.
->
-> ###### Details
-> Blocked: Blocked by policy
-
-
-
 ## Output
 The output is set as checks associated with the build. These checks can be summarized using OpenAI ChatBot.
-Here is an [example Output Report](https://github.com/invisirisk/pse-action/actions/runs/4840230332/jobs/8625753277)
 
 ## Restrictions
 - Only works with Alpine, Debian, and Ubuntu container builds.

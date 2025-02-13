@@ -195,7 +195,7 @@ Here is an [example Output Report](https://github.com/invisirisk/pse-action/acti
 ### Licensing
 The project is licensed under [Apache License v2](https://www.apache.org/licenses/LICENSE-2.0).
 
-# About the Organization
+## About the Organization
 InvisiRisk provides unparalleled protection for your software supply chain by enforcing real-time security policies, inspecting bi-directional traffic, and adapting to new threats, ensuring zero-trust. Our Build Application Firewall provides continuous security for your build environment, without complex agents or limited scanners with a seamless, rapid setup for GitHub Actions and other CI/CDs.
 
 - Agnostic, purpose-built security layer for build systems and Application Security Posture Managers

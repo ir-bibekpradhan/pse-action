@@ -54,11 +54,6 @@ Full policy control over what should be admitted to the build system. PSE uses [
 
 The policy control allows for alert or block of traffic.
 
-Here are examples of action runs:
-- [Basic NPM Demo](https://github.com/invisirisk/pse-action/actions/runs/4840230332/jobs/8625753277)
-- [Secret Leak Demo](https://github.com/invisirisk/pse-action/actions/runs/4840230332/jobs/8625756297)
-- [Block by Policy Demo](https://github.com/invisirisk/pse-action/actions/runs/4840230332/jobs/8625751936)
-
 #### Example block report
 
 > ##### :no_entry_sign: git - pull - github.com/TheTorProject/gettorbrowser
@@ -200,19 +195,6 @@ Policy return should include the following details:
 The output is set as checks associated with the build. These checks can be summarized using OpenAI ChatBot.
 Here is an [example Output Report](https://github.com/invisirisk/pse-action/actions/runs/4840230332/jobs/8625753277)
 
-
-### Roadmap
-- [X] Basic proxy for Alpine Container
-- [X] Provide output as Github Check
-- [X] Check of secrets in all POSTs
-- [X] go module
-- [X] npm module
-- [X] git operations
-- [X] web operations
-- [ ] MVN operations
-- [ ] PyPI support
-- [X] Ubuntu, Debian Container
-- [X] Policy Interface
 ## Restrictions
 - Only works with Alpine, Debian, and Ubuntu container builds.
 - Build container must allow root access to run iptables.
